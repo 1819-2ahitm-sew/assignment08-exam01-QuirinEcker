@@ -42,27 +42,27 @@ public class StringCompress {
      * @return String-Array mit dem entpacktem Text
      */
     public String[] readFromFile(String fileName) {
-        String[] compressedDigits = new String[getNoOfLines(FILE_NAME)];
-        int x = 0;
+        String[] deCompressedDigits = new String[getNoOfLines(FILE_NAME)];
+        int k = 0;
         int multiplier;
 
         try(Scanner scanner = new Scanner(new FileReader(FILE_NAME))) {
             while (scanner.hasNextLine()) {
-                compressedDigits[x] = "";
+                deCompressedDigits[k] = "";
                 String line = scanner.nextLine();
                 multiplier = getMultipliers(line);
                 for (int i = 0; i < multiplier; i++) {
-                    compressedDigits[x] += line.charAt(0);
+                    deCompressedDigits[k] += line.charAt(0);
                 }
 
-                x++;
+                k++;
             }
 
         } catch (FileNotFoundException e) {
             System.err.println(e.getMessage());
         }
 
-        return compressedDigits;
+        return deCompressedDigits;
     }
 
     private int getMultipliers(String line) {

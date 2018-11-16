@@ -12,7 +12,7 @@ abstract public class Document {
     //endregion
     private String author;
 
-    public Document() {
-
+    public Document(String author) {
+        this.author = author;
     }
 }

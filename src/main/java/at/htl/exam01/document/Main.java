@@ -45,6 +45,9 @@ public class Main {
                 System.out.println(documents[i].toString());
             }
         }
+        System.out.println();
+        System.out.println("Anzahl Books: " + bookCount);
+        System.out.println("Anzahl Email: " + emailCount);
     }
 
     private static Document[] create(Document[] documents) {

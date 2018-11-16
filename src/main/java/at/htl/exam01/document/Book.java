@@ -9,22 +9,17 @@ public class Book extends Document {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
     //endregion
     private String title;
-    private String author;
 
-    public Book() {}
     public Book(String author, String title) {
-        this.author = author;
+        super(author);
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "Book: '" + title + "' von '" + super.getAuthor() + "'";
     }
 
 

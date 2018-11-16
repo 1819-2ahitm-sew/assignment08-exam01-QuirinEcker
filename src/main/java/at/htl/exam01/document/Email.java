@@ -18,11 +18,17 @@ public class Email extends Document{
         this.to = to;
     }
     //endregion
-    String subject;
-    String to;
+    private String subject;
+    private String to;
 
-    public Email() { }
     public Email(String author, String subject, String to) {
+        super(author);
+        this.subject = subject;
+        this.to = to;
+    }
 
+    @Override
+    public String toString() {
+        return "Email: '" + subject + "' von '" + super.getAuthor() + "' an '" + to + "'";
     }
 }
